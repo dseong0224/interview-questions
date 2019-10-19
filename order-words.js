@@ -1,21 +1,22 @@
 function order(words){
   
-  var commaSeparatedWordsArray = words.split(' ');
-  var ComparedWordIndex = 0;
-  var numberInPreviousWord = parseInt(commaSeparatedWordsArray[ComparedWordIndex],10);
+  var wordsArray = words.split(' ');
   
-  for( var wordIndex = ComparedWordIndex; wordIndex < commaSeparatedWordsArray.length; wordIndex++){
-  
-    var numberInCurrentWord = parseInt(commaSeparatedWordsArray[wordIndex],10);
-    
-    if(numberInCurrentWord < numberInPreviousWord){ 
-    commaSeparatedWordsArray[ComparedWordIndex] = commaSeparatedWordsArray[wordIndex];
+  var answerArray = [];
+  var posArray = [1,2,3,4,5,6,7,8,9];
+  for(var wordPos = 0; wordPos < posArray.length; wordPos++){
+    for( var wordIndex = 0; wordIndex < wordsArray.length; wordIndex++){
+    if(wordsArray[wordIndex].includes(posArray[wordPos])){
+      answerArray.push(wordsArray[wordIndex]);
     }
-    
-    ComparedWordIndex++;
+  }
   }
   
   
-  return commaSeparatedWordsArray.join(' ')
+  var answer = answerArray.join(' ')
+  console.log(answer)
+  return answer
   
 }
+
+order("is2 Thi1s T4est 3a")
