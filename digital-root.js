@@ -17,3 +17,7 @@ function digital_root(n){
 }
 
 digital_root(12345)
+
+function digital_root(n) {
+  return (n - 1) % 9 + 1;
+}
