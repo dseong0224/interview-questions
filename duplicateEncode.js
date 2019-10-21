@@ -6,21 +6,16 @@
 
 
 function duplicateEncode(word){
-  var wordArray = word.split(''); //['h','e','l','l','o']
-  for(var currentChar = 0; currentChar < wordArray.length; currentChar++){
-
-    for(var comparator = 0 ; comparator < wordArray.length; comparator++){
-      var indexOfCurrentChar = wordArray.indexOf(wordArray[currentChar])
-      if(wordArray[comparator] === wordArray[indexOfCurrentChar]){
-        console.log("match", wordArray[comparator])
-        wordArray[comparator] = '('
-      }
+  var string = "";
+  var lowerCaseWord = word.toLowerCase();
+  for (var i = 0; i < lowerCaseWord.length; i++) {
+    if (lowerCaseWord.indexOf(lowerCaseWord[i]) === lowerCaseWord.lastIndexOf(lowerCaseWord[i])) {
+      string += "(";
+    } else {
+      string += ")";
     }
   }
-  
-  var answer = wordArray.join('');
-  console.log("answer", answer);
-  return answer;
+  return string;
 }
 
 duplicateEncode('hello')
