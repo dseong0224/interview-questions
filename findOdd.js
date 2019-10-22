@@ -18,3 +18,5 @@ function findOdd(A) {
 }
 
 findOdd([1,1,1,1,1,1,1,4,4,5,5,6,6,7,7])
+
+const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
