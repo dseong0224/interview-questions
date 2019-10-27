@@ -1,16 +1,27 @@
 //takes in an array of integers
 //returns the number that orrures most often
 
-function mostOccured(array){
-  var map = {};
-  for(var i=0; i<array.length; i++){
-    map[array[i]] = 0;
-    if(map.hasOwnProperty(map[array[i]])){
-      map[array[i]]++
+function mode(array){
+    if(array.length == 0)
+        return null;
+    var modeMap = {};
+    var maxEl = array[0] 
+    var maxCount = 1;
+    for(var i = 0; i < array.length; i++){
+        var el = array[i];
+        if(!modeMap[el]){
+          modeMap[el] = 1;
+        } else {
+          modeMap[el]++;
+        }
+              
+        if(modeMap[el] > maxCount)
+        {
+            maxEl = el;
+            maxCount = modeMap[el];
+        }
     }
-  } 
-  console.log("map: ", map)
-  return map
+    return maxEl;
 }
 
-mostOccured([1,2,3,4,1,2,1])
+mode([1,2,3,4,1,2,1])
