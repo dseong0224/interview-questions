@@ -6,7 +6,7 @@
 //a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
 //returns ["arp", "live", "strong"]
 
-function inArray(array1,array2){
+function inArray(array1,array2){//O(N^2)
   // debugger;
   //loop through array1 within array2 to find a match
   //if there is a substring push that that item into answer array
@@ -20,7 +20,13 @@ function inArray(array1,array2){
     }
   }
   console.log("answerArray:", answerArray)
-  return answerArray;
+  return answerArray.sort();
 }
 
 inArray(["arp", "live", "strong"],["lively", "alive", "harp", "sharp", "armstrong"])
+
+function inArray(array1,array2){
+  let answerArray = [];
+
+  return answerArray;
+}
