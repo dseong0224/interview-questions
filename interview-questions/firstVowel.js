@@ -16,6 +16,6 @@
 // Input always contains a vowel.
 
 function firstVowel(str) {
-  let regex = /[aeiouAEIOU]/
+  let regex = /[aeiou]/i
   return str.search(regex)
   }
