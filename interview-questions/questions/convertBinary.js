@@ -10,14 +10,20 @@
 // Notes
 // Conversion should be case insensitive (see example #2).
 
+// function convertBinary(str) {
+// 	let answer = "";
+// 	for(let charIndex = 0; charIndex < str.length; charIndex++ ){
+// 		if( str.toLowerCase()[charIndex] < 'n' ){
+// 			answer+= "0" 
+// 		} else {
+// 			answer+= "1"
+// 		}
+// 	} 
+// 	return answer
+// }
+
 function convertBinary(str) {
-	let answer = "";
-	for(let charIndex = 0; charIndex < str.length; charIndex++ ){
-		if( str.toLowerCase()[charIndex] < 'n' ){
-			answer+= "0" 
-		} else {
-			answer+= "1"
-		}
-	} 
-	return answer
+	return str
+					.replace(/[a-m]/gi, '0')
+					.replace(/[n-z]/gi, '1');
 }
